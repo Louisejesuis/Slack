@@ -1,25 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import {
+  Container,
+  Col,
+  Row,
+  ListGroup,
+  ListGroupItem,
+  Badge
+} from "reactstrap";
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <Row>
+        <Col sm="2">
+          <ListGroup>
+            <ListGroupItem className="justify-content-between">
+              Cras justo odio <Badge pill>14</Badge>
+            </ListGroupItem>
+            <ListGroupItem className="justify-content-between">
+              Dapibus ac facilisis in <Badge pill>2</Badge>
+            </ListGroupItem>
+            <ListGroupItem className="justify-content-between">
+              Morbi leo risus <Badge pill>1</Badge>
+            </ListGroupItem>
+          </ListGroup>
+        </Col>
+        <Col sm="10"></Col>
+      </Row>
+    </Container>
   );
 }
 
