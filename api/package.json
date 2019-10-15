@@ -4,11 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "migrate": "db-migrate up"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "db-migrate": "^0.11.6",
+    "db-migrate-pg": "^1.0.0",
+    "dotenv": "^8.1.0",
+    "express": "^4.17.1",
+    "path": "^0.12.7",
+    "pg": "^7.12.1"
   }
 }
