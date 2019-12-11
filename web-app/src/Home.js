@@ -20,28 +20,20 @@ import "./App.css";
 import iconPlus from "./images/plus.png";
 
 const Home = () => {
-  const chans = [
-    "# corrections",
-    "# events",
-    "# general",
-    " # paris_alternance",
-    " # tutu"
-  ];
-
   const toggle = () => setModal(!modal);
   const [modal, setModal] = useState(false);
   const [channels, setChannels] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch("http://localhost:5000/express_backend/");
+      const response = await fetch("/express_backend/");
       const { channels } = await response.json();
       setChannels(channels);
     };
     fetchData();
-    console.log(channels);
   }, []);
 
+  console.log(channels);
   return (
     <Container style={{ maxWidth: "none" }}>
       <Row>
@@ -93,12 +85,12 @@ const Home = () => {
                 </ModalFooter>
               </Modal>
             </ListGroupItem>
-            {chans.map(chan => (
+            {channels.map(chan => (
               <ListGroupItem
                 className="justify-content-between"
                 style={{ backgroundColor: "#480042", borderStyle: "hidden" }}
               >
-                {chan}
+                {chan.title}
                 <Badge
                   pill
                   style={{ backgroundColor: "#DC004F", float: "right" }}
